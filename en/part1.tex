@@ -238,6 +238,58 @@ New Brunswick and Nova Scotia committed to paying \$162.5 million each for a tot
 %click here to see my solution}}.
 \end{itemize}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Images}
+\begin{frame}[fragile]{\insertsubsection}
+\begin{itemize}
+\item Requires the \bftt{graphicx} package, which provides the
+\cmdbs{includegraphics} command. 
+\item Supported graphics formats include JPEG, PNG and PDF (usually).
+\item Download the chignecto\_bridge.jpg file from Moodle.
+\item Upload it to your project.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Interlude: Optional Arguments}
+\begin{itemize}
+\item We use square brackets \keystrokebftt{[} \keystrokebftt{]} for optional
+arguments, instead of braces \keystrokebftt{\{} \keystrokebftt{\}}.
+\item \cmdbs{includegraphics} accepts optional arguments that allow you to transform the
+image when it is included. For example, \bftt{width=0.3\cmdbs{textwidth}} makes
+the image take up 30\% of the width of the surrounding text (\cmdbs{textwidth}).
+\item \cmdbs{documentclass} accepts optional arguments, too. Example:
+\mint{latex}|\documentclass[12pt,twocolumn]{article}|
+\vskip 3ex
+makes the text bigger (12pt) and puts it into two columns.
+\item Where do you find out about these? See the slides at the end of this
+presentation for links to more information.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Add an image}
+\begin{verbatim}
+Add the graphicx package below the documentclass command 
+if it was not added when you opened your project:
+\usepackage{graphicx}
+
+Create new section:
+\section\{Images}
+
+\includegraphics[
+  width=0.5\textwidth]{chignecto_bridge.jpg}
+\end{verbatim}
+
+\tiny{Image license: \href{https://www.flickr.com/photos/29442760@N00/54349740863/}{CC BY-SA 2.0, By A Disappearing Act}}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
