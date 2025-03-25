@@ -32,12 +32,38 @@
 \begin{itemize}
 \item Packages for papers, presentations, spreadsheets, \ldots
 \end{itemize}
+%
+\item Publishers use templates to ensure standardization of formatting
+\begin{itemize}
+\item Journals, theses, ...
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Getting started}
+\begin{frame}[fragile]{\insertsubsection{} with Overleaf}
+\begin{itemize}
+\item Overleaf is a website for writing documents in \LaTeX.
+\item It `compiles' your \LaTeX{} automatically to show you the results.
+\vskip 2em
+\item Sign in or register for a new account with \wllogo{} 
+\\
+at \url{https://www.overleaf.com/register}
+\item Confirm email address.
+\item Enter name, familiarity with \LaTeX, and university information
+\item Create a new project - choose blank project
+\item Name the new project ``2025 LaTeX Workshop''
+\item Download the files from our Moodle course onto your computer.
+\item Upload the files to your project.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{How does it work?}
 \begin{itemize}
 \item You write your document in \texttt{plain text} with \cmd{commands} that
@@ -64,9 +90,9 @@ The rain in Spain falls \emph{mainly} on the plain.
 \begin{frame}[fragile]{More examples of commands and their output\ldots}
 \begin{exampletwoup}
 \begin{itemize}
-\item Tea
-\item Milk
-\item Biscuits
+\item New Brunswick
+\item Nova Scotia
+\item Canada
 \end{itemize}
 \end{exampletwoup}
 \vskip 2ex
@@ -88,7 +114,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Attitude adjustment}
+\begin{frame}[fragile]{Adjust your thinking}
 
 \begin{itemize}
 \item Use commands to describe `what it is', not `how it looks'.
@@ -100,35 +126,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Basics}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Getting started}
-\begin{frame}[fragile]{\insertsubsection{} with \wlogo}
-\begin{itemize}
-\item Overleaf is a website for writing documents in \LaTeX.
-\item It `compiles' your \LaTeX{} automatically to show you the results.
-\vskip 2em
-\item Sign in or register for a new account with \wllogo{} 
-\\
-at \url{https://www.overleaf.com/register}
-\item Confirm email address.
-\item Enter name, familiarity with \LaTeX, and university information
-\item Create a new project - choose blank project
-\item Name the new project ``Chignecto Isthmus''
-\vskip 2ex
-#\item As we go through the following slides, try out the examples by typing them
-into the example document on Overleaf.
-#\item \textbf{No really, you should try them out as we go!}
-\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection}
+\begin{frame}[fragile]{The Basics}
 \begin{itemize}
 \item A minimal \LaTeX{} document:
 \inputminted[frame=single]{latex}{basics.tex}
@@ -219,11 +217,13 @@ even be above it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Typesetting Exercise 1}
+\begin{frame}[fragile]{Exercise 1: Typesetting}
 
 \begin{block}{Typeset this in \LaTeX:
 \footnote{\url{https://www.canada.ca/en/housing-infrastructure-communities/news/2025/03/protecting-the-chignecto-isthmus-against-climate-change.html}}}
 New Brunswick and Nova Scotia committed to paying \$162.5 million each for a total of \$325 million to support the Chignecto Isthmus project (valued at \$650 million).
+
+Each province is contributing 25\% of the total cost.
 \end{block}
 \vskip 2ex
 \begin{center}
@@ -241,14 +241,28 @@ New Brunswick and Nova Scotia committed to paying \$162.5 million each for a tot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Images}
-\begin{frame}[fragile]{\insertsubsection}
+\begin{frame}[fragile]{Interlude: Packages}
+
 \begin{itemize}
-\item Requires the \bftt{graphicx} package, which provides the
-\cmdbs{includegraphics} command. 
-\item Supported graphics formats include JPEG, PNG and PDF (usually).
-\item Download the chignecto\_bridge.jpg file from Moodle.
-\item Upload it to your project.
+\item All of the commands and environments we've used so far are built into
+\LaTeX.
+
+\item \emph{Packages} are libraries of extra commands and environments. There
+are thousands of freely available packages.
+
+\item We have to load each of the packages we want to use with a
+\cmdbs{usepackage} command in the \emph{preamble}.
+
+\item Example: \bftt{amsmath} from the American Mathematical Society.
+\item Example: \bftt{graphicx}
+\begin{minted}[fontsize=\small,frame=single]{latex}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath} % preamble
+\begin{document}
+% now we can use commands from graphicx and amsmath 
+\end{document}
+\end{minted}
 \end{itemize}
 \end{frame}
 
@@ -274,22 +288,28 @@ presentation for links to more information.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Add an image}
-\begin{verbatim}
-Add the graphicx package below the documentclass command 
+\begin{frame}[fragile]{Exercise 2: Add an image}
+\begin{itemize}
+Add the graphicx package in the preamble 
 if it was not added when you opened your project:
+\begin{verbatim}
 \usepackage{graphicx}
-
-Create new section:
-\section\{Images}
-
-\includegraphics[
-  width=0.5\textwidth]{chignecto_bridge.jpg}
 \end{verbatim}
+
+\begin{exampletwoup}
+\begin{section}
+\section{Images}
+\end{section}
+\end{exampletwoup}
+\begin{figure}
+\includegraphics[
+  width=0.5\textwidth]
+  {chignecto_bridge.jpg}
+\end{figure}
+\end{exampletwoup}
 
 \tiny{Image license: \href{https://www.flickr.com/photos/29442760@N00/54349740863/}{CC BY-SA 2.0, By A Disappearing Act}}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -417,32 +437,6 @@ different environments.
 \item Tea
 \end{enumerate}
 \end{exampletwouptiny}
-\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Packages}
-
-\begin{itemize}
-\item All of the commands and environments we've used so far are built into
-\LaTeX.
-
-\item \emph{Packages} are libraries of extra commands and environments. There
-are thousands of freely available packages.
-
-\item We have to load each of the packages we want to use with a
-\cmdbs{usepackage} command in the \emph{preamble}.
-
-\item Example: \bftt{amsmath} from the American Mathematical Society.
-\begin{minted}[fontsize=\small,frame=single]{latex}
-\documentclass{article}
-\usepackage{amsmath} % preamble
-\begin{document}
-% now we can use commands from amsmath here...
-\end{document}
-\end{minted}
 \end{itemize}
 \end{frame}
 
